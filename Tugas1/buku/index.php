@@ -34,7 +34,7 @@ include 'db.php';
                                 <td>".$row['id_buku']."</td>
                                 <td>".$row['judul_buku']."</td>
                                 <td>".$row['penerbit']."</td>
-                                <td>".$row['tahun']."</td>
+                                <td>".$row['year']."</td>
                                 <td>".$row['genre']."</td>
                               </tr>";
                     }
