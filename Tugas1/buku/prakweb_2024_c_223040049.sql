@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 12, 2024 at 06:22 AM
+-- Generation Time: Oct 13, 2024 at 03:34 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `prakweb_2024_c_223040049`
 --
+DROP DATABASE IF EXISTS `prakweb_2024_c_223040049`;
+CREATE DATABASE IF NOT EXISTS `prakweb_2024_c_223040049` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `prakweb_2024_c_223040049`;
 
 -- --------------------------------------------------------
 
@@ -27,13 +30,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `buku`
 --
 
-CREATE TABLE `buku` (
-  `id_buku` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `buku` (
+  `id_buku` int NOT NULL AUTO_INCREMENT,
   `judul_buku` varchar(255) NOT NULL,
   `penerbit` varchar(255) NOT NULL,
   `year` int NOT NULL,
-  `genre` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `genre` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_buku`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `buku`
@@ -50,26 +54,6 @@ INSERT INTO `buku` (`id_buku`, `judul_buku`, `penerbit`, `year`, `genre`) VALUES
 (8, 'Manajemen Proyek Teknologi Informasi', 'Jogiyanto HM', 2012, 'Informatika'),
 (9, 'Pengantar Teknologi Informasi', 'Wahana Komputer', 2019, 'Informatika'),
 (10, 'Keamanan Jaringan Komputer', 'Agus Kurniawan', 2020, 'Informatika');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `buku`
---
-ALTER TABLE `buku`
-  ADD PRIMARY KEY (`id_buku`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `buku`
---
-ALTER TABLE `buku`
-  MODIFY `id_buku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
